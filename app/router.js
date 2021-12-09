@@ -6,4 +6,9 @@ export default class Router extends EmberRouter {
   rootURL = config.rootURL;
 }
 
-Router.map(function () {});
+Router.map(function () {
+  this.route('scientists');
+  this.route('programmers');
+  this.route('airtable', { path: 'airtable/:page_number' });
+  this.route('page_not_found', { path: '/*path' });
+});

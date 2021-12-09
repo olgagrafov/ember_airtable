@@ -1,0 +1,38 @@
+
+
+<!--<a href="/airtable/1"> next</a>-->
+<!--<a href="/airtable/1"> previous</a>-->
+
+<!--<div class = "nav_buttons">-->
+<div class = "hidden md:flex flex-row justify-center">
+
+    {{#if (gt @currentPage 1) }}
+    <div class="btn">
+        <button type="button" {{on 'click' @decrement}}>&lt;&lt;<</button>
+    </div>
+    {{else}}
+      <div class="btn_disabled">&lt;&lt;</div>
+     {{/if}}
+
+
+   {{#each (range 0 @pageCounter ) as |step|}}
+     {{#if (eq (inc step) @currentPage)}}
+       <div class="btn_disabled border border-blue-500"> {{ inc step }} </div>
+     {{else}}
+       <div class="btn">
+         <button type="button" {{on 'click' (fn @setDataByPage step) }}>{{ inc step }}  </button>
+       </div>
+     {{/if}}
+
+   {{/each}}
+
+
+    {{#if  (lt  @currentPage @pageCounter) }}
+    <div class="btn">
+       <button   type="button" {{on 'click' @increment}}>&gt;&gt;</button>
+    </div>
+    {{else}}
+        <div class="btn_disabled"> &gt;&gt;</div>
+     {{/if}}
+
+</div>

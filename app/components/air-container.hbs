@@ -1,0 +1,13 @@
+<div class="w-full text-center font-mono p-8 text-2xl font-extrabold"
+     data-test-title >{{@title}}</div>
+
+<AirList
+  @airList = {{this.myList}} />
+
+<NavigationButtons
+   @increment = {{this.increment}}
+   @decrement = {{this.decrement}}
+   @currentPage = {{this.pageNumber}}
+   @pageCounter = {{this.countPage}}
+   @setDataByPage = {{this.setDataByPage}}
+ />

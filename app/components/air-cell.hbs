@@ -1,0 +1,15 @@
+
+{{#if @cell.imageUrl }}
+<!--  <img class="img_card" src={{@cell.imageUrl}} alt={{ @cell.headline }} >-->
+  <img class="rounded-full h-36 w-36 flex items-center justify-center"
+       src={{@cell.imageUrl}} alt={{ @cell.headline }} >
+{{else}}
+<!--  <img class="img_card" src="../assets/noimg.png" />-->
+  <img class="rounded-full h-36 w-36 flex items-center justify-center" src="../assets/noimg.png" />
+{{/if}}
+  <div class="py-2 text-xl font-semibold"
+    data-test-headLine> {{  @cell.headline }}</div>
+  <div class="py-2.5" data-test-subHeadLine> {{ @cell.subHeadline }} </div>
+
+
+
