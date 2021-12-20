@@ -5,7 +5,7 @@ export default class AirtableRoute extends Route {
     // console.log(params.page_number);
 
     let response1 = await fetch(
-      'http://localhost:3000',
+      'http://localhost:3000/airtable',
     );
 
     let res = [];
@@ -14,9 +14,14 @@ export default class AirtableRoute extends Route {
     data.forEach((element) => {
     //  console.log(element)
       obj = {
-        headline: element.fields.headline,
-        subHeadline: element.fields.subHeadline,
-        imageUrl: element.fields.imageUrl,
+        headline: element.headline,
+        subHeadline: element.subHeadline,
+        imageUrl: element.imageUrl,
+
+        // for 'http://localhost:3000
+        // headline: element.fields.headline,
+        // subHeadline: element.fields.subHeadline,
+        // imageUrl: element.fields.imageUrl,
       };
       res.push(obj);
 
